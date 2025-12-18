@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome</title>
 </head>
 <body>
+    <h1>Welcome to {{ site_name }}</h1>
 
+    <p>Hi {{ user.first_name }},</p>
+
+    <p>
+        Thank you for joining {{ site_name }}.
+        We are happy to have you.
+    </p>
+
+    <p>
+        Best Regards,<br>
+        {{ site_name }} Team
+    </p>
+
+    <p>
+        © {{ current_year }} {{ site_name }}
+    </p>
 </body>
 </html>

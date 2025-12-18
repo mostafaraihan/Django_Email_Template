@@ -8,30 +8,28 @@ def signup_view(request):
         first_name = request.POST.get("first_name")
         email = request.POST.get("email")
 
-        # Email context
         context = {
-            "site_name": "MyApp",
-            "user": {"first_name": first_name},
-            "login_url": "https://myapp.com/login/",
+            "site_name": "Raihan World",
+            "user": {
+                "first_name": first_name
+            },
             "current_year": now().year,
-            "company_address": "123 Main Street, City, Country",
         }
 
-        # Render welcome email template
-        html_content = render_to_string("emails/welcome_email.html", context)
+        html_content = render_to_string("massage.html", context)
 
-        # Send email
         email_message = EmailMultiAlternatives(
-            subject="Welcome to MyApp!",
-            body="Welcome to MyApp!",
-            from_email="MyApp <noreply@myapp.com>",
+            subject="Welcome to Raihan World!",
+            body="Welcome to Raihan World!",
+            from_email="Raihan World <noreply@raihanworld.com>",
             to=[email],
         )
+
         email_message.attach_alternative(html_content, "text/html")
         email_message.send()
 
-        return render(request, "signup.html", {
+        return render(request, "form.html", {
             "message": "Welcome email sent successfully!"
         })
 
-    return render(request, "signup.html")
+    return render(request, "form.html")

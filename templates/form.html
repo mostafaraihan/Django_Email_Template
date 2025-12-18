@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hi Welcome </title>
+    <title>Signup</title>
 </head>
 <body>
 
+    <h2>Signup Form</h2>
+
     <form method="post">
         {% csrf_token %}
+
         <label>Name:</label><br>
         <input type="text" name="first_name" required><br><br>
 
@@ -19,5 +22,6 @@
     {% if message %}
         <p style="color: green;">{{ message }}</p>
     {% endif %}
+
 </body>
 </html>
