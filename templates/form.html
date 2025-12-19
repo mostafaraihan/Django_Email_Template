@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Raihan World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             margin: 0;
@@ -77,6 +77,16 @@
             font-size: 14px;
         }
 
+        .footer{
+            display: flex;
+            font-size: 15px;
+            justify-content: center;
+        }
+
+        a{
+            text-decoration: none;
+            padding-right: 50px;
+        }
         @media (max-width: 480px) {
             .signup-box {
                 padding: 25px;
@@ -87,16 +97,20 @@
 <body>
 
     <div class="signup-box">
-        <h2>Welcome</h2>
+       <h2>Welcome</h2>
 
         <form method="post">
             {% csrf_token %}
 
             <label>Name</label>
-            <input type="text" name="first_name" placeholder="Enter your name" required>
+            <label>
+                <input type="text" name="first_name" placeholder="Enter your name" required>
+            </label>
 
             <label>Email</label>
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </label>
 
             <button type="submit">Submit</button>
         </form>
@@ -104,6 +118,11 @@
         {% if message %}
             <div class="message">{{ message }}</div>
         {% endif %}
+        <br>
+        <div class="footer">
+            <p><a href="https://github.com/mostafaraihan/Django_Mail_Flow" target="_blank"><i class="fa-brands fa-github"></i> Project Code</a></p>
+            <p>Code By <a href="https://github.com/mostafaraihan" target="_blank">Mostafa Raihan</a></p>
+        </div>
     </div>
 
 </body>
