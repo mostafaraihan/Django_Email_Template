@@ -10,7 +10,7 @@ def signup_view(request):
 
         # Email context
         context = {
-            "site_name": "Raihan World",
+            "site_name": "Raihan From Bangladesh",
             "user": {"first_name": first_name},
             "current_year": now().year,
         }
@@ -21,7 +21,7 @@ def signup_view(request):
         # Send email
         email_message = EmailMultiAlternatives(
             subject="Welcome to Raihan World!",
-            body="Welcome to Raihan World!",
+            body="Welcome to Raihan Virtual World!",
             from_email="Raihan World <noreply@raihanworld.com>",
             to=[email],
         )
